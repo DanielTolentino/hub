@@ -1,17 +1,18 @@
 ---
+import { Icon } from 'astro-icon';
 export interface Props {
 	title: string;
+	icon: string;
 	body: string;
 	href: string;
 }
 
-const { href, title, body } = Astro.props;
+const { href, title, icon, body } = Astro.props;
 ---
-
 <li class="link-card">
 	<a href={href}>
 		<h2>
-			{title}
+			{<Icon name={icon} />} {title}
 			<span>&rarr;</span>
 		</h2>
 		<p>
@@ -20,6 +21,10 @@ const { href, title, body } = Astro.props;
 	</a>
 </li>
 <style>
+	[astro-icon] {
+		display: inline;
+        width: 20px;
+    }
 	.link-card {
 		list-style: none;
 		display: flex;

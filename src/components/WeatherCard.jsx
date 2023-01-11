@@ -10,7 +10,7 @@ const humidity = data.main.humidity;
 const wind = data.wind.speed;
 const desc = data.weather[0].description;
 
-function HelloWorld() {
+function WeatherCard() {
   
   return <li class="weather-card">
             <h1>Sete Lagoas </h1>
@@ -24,4 +24,4 @@ function HelloWorld() {
           </h2>
         </li>;
 }
-export default HelloWorld;
+export default WeatherCard;

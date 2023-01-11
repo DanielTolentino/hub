@@ -2,8 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import CardNoBody from '../components/CardNoBody.astro';
-import WeatherCard from '../components/weatherCard.astro';
-import HelloWorld from '../components/WeatherCard.jsx';
+//import WeatherCard from '../components/weatherCard.astro';
+import WeatherCard from '../components/WeatherCard.jsx';
 import { Icon } from 'astro-icon';
 
 ---
@@ -11,8 +11,7 @@ import { Icon } from 'astro-icon';
 <Layout title="MyHub">
 	<main>
 		<h1>Bem-vindo ao meu <span class="text-gradient">Hub</span></h1>
-		<WeatherCard />
-		<HelloWorld />
+		<WeatherCard client:load />
 		<p class="description">
 			Hub dedicado a organizar todos os meus links e acessos ao meu servidor.
 		</p>

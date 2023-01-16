@@ -7,12 +7,8 @@ import tailwind from "@astrojs/tailwind";
 import solidJs from "@astrojs/solid-js";
 
 // https://astro.build/config
-import netlify from "@astrojs/netlify/functions";
-
-// https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), solidJs()],
   site: 'https://hub.danieltolentino.omg.lol',
   output: "server",
-  adapter: netlify()
 });

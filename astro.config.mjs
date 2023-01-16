@@ -10,5 +10,4 @@ import solidJs from "@astrojs/solid-js";
 export default defineConfig({
   integrations: [tailwind(), solidJs()],
   site: 'https://hub.danieltolentino.omg.lol',
-  output: "server",
 });

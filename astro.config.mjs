@@ -10,9 +10,12 @@ import solidJs from "@astrojs/solid-js";
 import netlify from "@astrojs/netlify/functions";
 
 // https://astro.build/config
+import vercel from "@astrojs/vercel/serverless";
+
+// https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), solidJs()],
   site: 'https://hub.danieltolentino.omg.lol/',
   output: "server",
-  adapter: netlify()
+  adapter: vercel()
 });

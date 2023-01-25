@@ -1,5 +1,4 @@
-
-export function getWeatherData(api_key) {
+export async function getWeatherData(api_key) {
     const queryURL = "https://api.openweathermap.org/data/2.5/weather?lat=-19.4658&lon=-44.2467" + "&appid=" + api_key +"&lang=pt_br&units=metric";
     return fetch(queryURL)
       .then(response => response.json())
@@ -16,7 +15,6 @@ export function getWeatherData(api_key) {
   
   const api_key = import.meta.env.SECRET_KEY;
   //let weatherData = getWeatherData(api_key);
-  
-  const weatherData = await getWeatherData(api_key);
 
-  export default weatherData;
+let weatherData;
+export default weatherData = await getWeatherData(api_key);

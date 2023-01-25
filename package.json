@@ -4,6 +4,9 @@
   "version": "0.0.1",
   "private": true,
   "types": "module",
+  "engines": {
+    "node": "18.13"
+  },
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",

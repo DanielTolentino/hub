@@ -22,7 +22,7 @@ function WeatherCard() {
       <h1>Sete Lagoas </h1>
       <h2>
         <span>
-          🌦️{main}°C | {feel}°C (sensação 🌡️)
+          🌦️{main}°C | 🌡️ Sensação de {feel}°C
         </span>
         <span>({desc}) </span>|<span> 💧{humidity}% </span>|
         <span> 🍃{wind}m/s</span>

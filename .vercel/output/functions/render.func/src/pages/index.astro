@@ -1,0 +1,117 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import CardNoBody from '../components/CardNoBody.astro';
+import WeatherCard from '../components/WeatherCard.jsx';
+import { Icon } from 'astro-icon';
+
+---
+
+<Layout title="MyHub">
+	<main>
+		<h1>Bem-vindo ao meu <span class="text-gradient">Hub</span></h1>
+		<WeatherCard client:load />
+		<p class="description">
+			Dedicado a organizar todos os meus links e acessos aos meus servidores.
+			<br>&rarr;<a href="https://danieltolentino.url.lol">PURLs</a>
+		</p>
+		<ul role="list" class="link-card-grid">
+			<Card
+				href="https://cloud.danieltolentino.omg.lol/"
+				icon="cloud"
+				title="Nextcloud"
+				body="Página do serviço de nuvem."
+			/>
+			<Card
+				href="https://adblock.danieltolentino.omg.lol/"
+				icon="adguard"
+				title="Adguard Home"
+				body="Painel de controle do Adguard Home."
+			/>
+			<CardNoBody
+				href="https://danieltolentino.url.lol/transfer"
+				title="🔗 Enviar arquivos via link"
+			/>
+			<CardNoBody
+				href="https://danieltolentino.url.lol/sendp"
+				title="🔐 Enviar senhas"
+			/>
+			<CardNoBody
+				href="https://danieltolentino.url.lol/markdown"
+				title="📃 Markdown Cheatsheet"
+			/>
+			<CardNoBody
+				href="https://danieltolentino.url.lol/pomodoro"
+				title="🍅 Pomodoro"
+			/>
+			<CardNoBody
+				href="https://danieltolentino.url.lol/invidious"
+				title="📹 Individious"
+			/>
+			<Card
+				href="https://blog.danieltolentino.omg.lol/"
+				title="Blog"
+				icon="globe"
+				body="Blog onde escrevo sobre tecnologia e descobertas."
+			/>
+			<Card
+				href="https://portfolio.danieltolentino.omg.lol/"
+				title="Portfólio"
+				icon="portifa"
+				body="Projetos feitos na imersão alura"
+			/>
+			<Card
+				href="https://danieltolentino.omg.lol/"
+				title="Cartão de Visita Digital"
+				icon="cartao"
+				body="Links e informações sobre mim."
+			/>
+			
+		</ul>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1.5rem;
+		max-width: 60ch;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 800;
+		margin: 0;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.description {
+		line-height: 1.6;
+		margin: 1rem 0;
+		border: 1px solid rgba(var(--accent), 25%);
+		background-color: white;
+		padding: 1rem;
+		border-radius: 0.4rem;
+	}
+	.instructions code {
+		font-size: 0.875em;
+		font-weight: bold;
+		background: rgba(var(--accent), 12%);
+		color: rgb(var(--accent));
+		border-radius: 4px;
+		padding: 0.3em 0.45em;
+	}
+	.instructions strong {
+		color: rgb(var(--accent));
+	}
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 1rem;
+		padding: 0;
+	}
+</style>

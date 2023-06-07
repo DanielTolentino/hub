@@ -2,11 +2,6 @@ import "solid-js";
 import "../Styles/WeatherCard.css";
 import weatherData from "../lib/getData";
 
-/* const queryURL = "https://api.openweathermap.org/data/2.5/weather?lat=-19.4658&lon=-44.2467" + "&appid=" + api_key +"&lang=pt_br&units=metric";
-const response = await fetch(queryURL);
-const data = await response.json(); */
-//
-
 let main = weatherData.main_weather;
 let feel = weatherData.feels_weather;
 let humidity = weatherData.humidity;

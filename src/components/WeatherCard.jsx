@@ -8,9 +8,6 @@ let humidity = weatherData.humidity;
 let wind = weatherData.wind;
 let desc = weatherData.desc;
 
-//main = main.toFixed(0);
-//feel = feel.toFixed(0);
-
 function WeatherCard() {
   return (
     <li class="weather-card">

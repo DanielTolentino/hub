@@ -16,6 +16,7 @@ function WeatherCard() {
         <span>
           🌦️{main}°C | 🌡️ Sensação de {feel}°C
         </span>
+        &nbsp
         <span>({desc}) </span>|<span> 💧{humidity}% </span>|
         <span> 🍃{wind}m/s</span>
       </h2>

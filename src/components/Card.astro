@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 export interface Props {
   title: string;
   icon: string;
@@ -22,7 +22,7 @@ const { href, title, icon, body } = Astro.props;
   </a>
 </li>
 <style>
-  [astro-icon] {
+  [data-icon] {
     display: inline;
     width: 20px;
   }

@@ -14,7 +14,7 @@ import icon from "astro-icon";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), solidJs(), icon()],
-  site: "https://hub.danieltolentino.tech/",
+  site: "https://hub.danieltolentino.net/",
   output: "server",
   compressHTML: true,
   adapter: vercel(),

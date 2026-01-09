@@ -24,58 +24,101 @@ const { href, title, icon, body } = Astro.props;
 <style>
   [data-icon] {
     display: inline;
-    width: 20px;
+    width: 22px;
+    height: 22px;
+    vertical-align: middle;
+    margin-right: 0.25rem;
   }
+  
   .link-card {
     list-style: none;
     display: flex;
-    padding: 0.15rem;
-    background-color: white;
+    padding: 2px;
     background-image: var(--accent-gradient);
-    background-size: 400%;
-    border-radius: 0.5rem;
+    background-size: 200%;
+    border-radius: 1rem;
     background-position: 100%;
-    transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-    box-shadow:
-      0 4px 6px -1px rgba(0, 0, 0, 0.1),
-      0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .link-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
   }
 
   .link-card > a {
     width: 100%;
     text-decoration: none;
-    line-height: 1.4;
-    padding: 1rem 1.3rem;
-    border-radius: 0.35rem;
+    line-height: 1.5;
+    padding: 1.25rem 1.5rem;
+    border-radius: calc(1rem - 2px);
     color: #111;
-    background-color: white;
-    opacity: 0.8;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
   }
+  
   h2 {
     margin: 0;
     font-size: 1.25rem;
-    transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    font-weight: 700;
+    transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    display: flex;
+    align-items: center;
   }
+  
   p {
-    margin-top: 0.5rem;
+    margin-top: 0.75rem;
     margin-bottom: 0;
-    color: #444;
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
   }
+  
   .link-card:is(:hover, :focus-within) {
     background-position: 0;
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-4px);
   }
+  
+  .link-card:is(:hover, :focus-within)::before {
+    opacity: 1;
+  }
+  
   .link-card:is(:hover, :focus-within) h2 {
     color: rgb(var(--accent));
   }
+  
+  .link-card:is(:hover, :focus-within) > a {
+    background-color: rgba(255, 255, 255, 1);
+  }
+  
   @media (prefers-color-scheme: dark) {
     .link-card > a {
-      background-color: black;
+      background-color: rgba(10, 10, 10, 0.8);
+      backdrop-filter: blur(10px);
     }
+    
+    .link-card:is(:hover, :focus-within) > a {
+      background-color: rgba(10, 10, 10, 0.95);
+    }
+    
     h2 {
       color: white;
     }
+    
     p {
-      color: grey;
+      color: #aaa;
     }
   }
 </style>

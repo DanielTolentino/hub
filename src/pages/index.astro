@@ -66,53 +66,93 @@ import WeatherCard from "../components/WeatherCard.jsx";
 <style>
   main {
     margin: auto;
-    padding: 1.5rem;
-    max-width: 60ch;
+    padding: 2rem 1.5rem;
+    max-width: 70ch;
+    width: 100%;
   }
+  
   h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    margin: 0;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 900;
+    margin: 0 0 1.5rem 0;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
   }
+  
   .text-gradient {
     background-image: var(--accent-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-size: 400%;
+    background-size: 200%;
     background-position: 0%;
+    animation: gradient-shift 8s ease infinite;
   }
+  
+  @keyframes gradient-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+  
   .description {
-    line-height: 1.6;
-    margin: 1rem 0;
-    border: 1px solid rgba(var(--accent), 25%);
-    background-color: white;
-    padding: 1rem;
-    border-radius: 0.4rem;
+    line-height: 1.7;
+    margin: 1.5rem 0 2rem 0;
+    border: 1px solid rgba(var(--accent), 15%);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1.25rem 1.5rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
   }
-  .instructions code {
-    font-size: 0.875em;
-    font-weight: bold;
-    background: rgba(var(--accent), 12%);
+  
+  .description:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+    border-color: rgba(var(--accent), 25%);
+  }
+  
+  .description a {
     color: rgb(var(--accent));
-    border-radius: 4px;
-    padding: 0.3em 0.45em;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    border-bottom: 2px solid transparent;
   }
-  .instructions strong {
-    color: rgb(var(--accent));
+  
+  .description a:hover {
+    border-bottom-color: rgb(var(--accent));
   }
+  
   .link-card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: 1.25rem;
     padding: 0;
+    margin-top: 2rem;
+  }
+  
+  @media (min-width: 640px) {
+    main {
+      padding: 3rem 2rem;
+    }
+    
+    .link-card-grid {
+      gap: 1.5rem;
+    }
   }
 
   @media (prefers-color-scheme: dark) {
     .description {
-      background-color: black;
+      background: rgba(0, 0, 0, 0.6);
       color: white;
-      border: 1px solid #8840e8;
+      border-color: rgba(var(--accent), 30%);
+      backdrop-filter: blur(10px);
     }
+    
     h1 {
       color: white;
     }

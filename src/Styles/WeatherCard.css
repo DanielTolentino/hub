@@ -2,42 +2,63 @@
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  padding: 0.5rem;
-  background-color: #e5e7eb;
-  background-size: 400%;
-  border-radius: 0.5rem;
-  background-position: 100%;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  padding: 1rem 1.25rem;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(218, 98, 196, 0.1) 100%);
+  border: 1px solid rgba(var(--accent), 15%);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
 }
+
+.weather-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  border-color: rgba(var(--accent), 25%);
+}
+
 h1 {
-  margin: 0;
+  margin: 0 0 0.25rem 0;
   width: 100%;
-  color: rgb(97, 97, 97);
-  font-size: 1rem;
-  transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  color: rgb(80, 80, 80);
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: color 0.3s ease;
 }
+
 h2 {
   margin: 0;
-  color: rgb(97, 97, 97);
-  font-size: 0.75rem;
-  transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  color: rgb(100, 100, 100);
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1.6;
+  transition: color 0.3s ease;
 }
-p {
-  margin-top: 0.5rem;
-  margin-bottom: 0;
-  color: #444;
+
+h2 span {
+  display: inline-block;
+  margin-right: 0.5rem;
 }
+
+@media (max-width: 640px) {
+  h2 {
+    font-size: 0.8rem;
+  }
+  
+  h2 span {
+    margin-right: 0.25rem;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   .weather-card {
-    background-color: black;
-    color: white;
-    border: 1px solid #8840e8;
-    border-radius: 0.4rem;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(218, 98, 196, 0.15) 100%);
+    border-color: rgba(var(--accent), 30%);
   }
 
   h1,
   h2 {
-    color: white;
+    color: rgba(255, 255, 255, 0.9);
   }
 }
